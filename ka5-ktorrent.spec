@@ -145,28 +145,18 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/qt5/plugins/ktorrent/ktorrent_scanfolder.so
 %attr(755,root,root) %{_libdir}/qt5/plugins/ktorrent/ktorrent_scanforlostfiles.so
 %attr(755,root,root) %{_libdir}/qt5/plugins/ktorrent/ktorrent_scripting.so
-#%attr(755,root,root) %{_libdir}/qt5/plugins/ktorrent/ktorrent_search.so
 %attr(755,root,root) %{_libdir}/qt5/plugins/ktorrent/ktorrent_shutdown.so
 %attr(755,root,root) %{_libdir}/qt5/plugins/ktorrent/ktorrent_stats.so
-#%attr(755,root,root) %{_libdir}/qt5/plugins/ktorrent/ktorrent_syndication.so
 %attr(755,root,root) %{_libdir}/qt5/plugins/ktorrent/ktorrent_upnp.so
 %attr(755,root,root) %{_libdir}/qt5/plugins/ktorrent/ktorrent_zeroconf.so
 %{_desktopdir}/org.kde.ktorrent.desktop
 %{_iconsdir}/hicolor/128x128/apps/ktorrent.png
-#%{_iconsdir}/hicolor/16x16/actions/kt-add-feeds.png
-#%{_iconsdir}/hicolor/16x16/actions/kt-add-filters.png
-#%{_iconsdir}/hicolor/16x16/actions/kt-remove-feeds.png
-#%{_iconsdir}/hicolor/16x16/actions/kt-remove-filters.png
 %{_iconsdir}/hicolor/16x16/actions/kt-stop-all.png
 %{_iconsdir}/hicolor/16x16/actions/kt-stop.png
 %{_iconsdir}/hicolor/16x16/actions/kt-upnp.png
 %{_iconsdir}/hicolor/16x16/apps/ktorrent.png
-#%{_iconsdir}/hicolor/22x22/actions/kt-add-feeds.png
-#%{_iconsdir}/hicolor/22x22/actions/kt-add-filters.png
 %{_iconsdir}/hicolor/22x22/actions/kt-magnet.png
 %{_iconsdir}/hicolor/22x22/actions/kt-pause.png
-#%{_iconsdir}/hicolor/22x22/actions/kt-remove-feeds.png
-#%{_iconsdir}/hicolor/22x22/actions/kt-remove-filters.png
 %{_iconsdir}/hicolor/22x22/actions/kt-remove.png
 %{_iconsdir}/hicolor/22x22/actions/kt-set-max-download-speed.png
 %{_iconsdir}/hicolor/22x22/actions/kt-set-max-upload-speed.png
@@ -176,14 +166,10 @@ rm -rf $RPM_BUILD_ROOT
 %{_iconsdir}/hicolor/22x22/actions/kt-stop-all.png
 %{_iconsdir}/hicolor/22x22/actions/kt-stop.png
 %{_iconsdir}/hicolor/22x22/apps/ktorrent.png
-#%{_iconsdir}/hicolor/32x32/actions/kt-add-feeds.png
-#%{_iconsdir}/hicolor/32x32/actions/kt-add-filters.png
 %{_iconsdir}/hicolor/32x32/actions/kt-info-widget.png
 %{_iconsdir}/hicolor/32x32/actions/kt-magnet.png
 %{_iconsdir}/hicolor/32x32/actions/kt-pause.png
 %{_iconsdir}/hicolor/32x32/actions/kt-queue-manager.png
-#%{_iconsdir}/hicolor/32x32/actions/kt-remove-feeds.png
-#%{_iconsdir}/hicolor/32x32/actions/kt-remove-filters.png
 %{_iconsdir}/hicolor/32x32/actions/kt-remove.png
 %{_iconsdir}/hicolor/32x32/actions/kt-set-max-download-speed.png
 %{_iconsdir}/hicolor/32x32/actions/kt-set-max-upload-speed.png

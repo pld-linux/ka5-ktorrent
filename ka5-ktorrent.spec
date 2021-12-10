@@ -1,4 +1,4 @@
-%define		kdeappsver	21.08.3
+%define		kdeappsver	21.12.0
 %define		kframever	5.82.0
 %define		qtver		5.15.2
 %define		kaname		ktorrent
@@ -6,12 +6,12 @@ Summary:	Native KDE BitTorrent client
 Summary(de.UTF-8):	Ein nativer KDE BitTorrent Klient
 Summary(pl.UTF-8):	Natywny klient BitTorrenta dla KDE
 Name:		ka5-%{kaname}
-Version:	21.08.3
+Version:	21.12.0
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	c95b2efacf1a4e76ac613cabd3246cc4
+# Source0-md5:	81773c6eaaf5300775c6ccfb07d65b45
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	Qt5DBus-devel >= %{qtver}
@@ -144,7 +144,6 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/qt5/plugins/ktorrent/ktorrent_mediaplayer.so
 %attr(755,root,root) %{_libdir}/qt5/plugins/ktorrent/ktorrent_scanfolder.so
 %attr(755,root,root) %{_libdir}/qt5/plugins/ktorrent/ktorrent_scanforlostfiles.so
-%attr(755,root,root) %{_libdir}/qt5/plugins/ktorrent/ktorrent_scripting.so
 %attr(755,root,root) %{_libdir}/qt5/plugins/ktorrent/ktorrent_shutdown.so
 %attr(755,root,root) %{_libdir}/qt5/plugins/ktorrent/ktorrent_stats.so
 %attr(755,root,root) %{_libdir}/qt5/plugins/ktorrent/ktorrent_upnp.so

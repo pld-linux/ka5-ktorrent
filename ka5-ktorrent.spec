@@ -1,7 +1,7 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeappsver	21.12.3
+%define		kdeappsver	22.04.0
 %define		kframever	5.82.0
 %define		qtver		5.15.2
 %define		kaname		ktorrent
@@ -9,12 +9,12 @@ Summary:	Native KDE BitTorrent client
 Summary(de.UTF-8):	Ein nativer KDE BitTorrent Klient
 Summary(pl.UTF-8):	Natywny klient BitTorrenta dla KDE
 Name:		ka5-%{kaname}
-Version:	21.12.3
+Version:	22.04.0
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	96ca1adc2ee8a64001c5e092153c968d
+# Source0-md5:	d2480dc5d3b5fc70fa181e7961db75c7
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	Qt5DBus-devel >= %{qtver}
@@ -99,8 +99,8 @@ KTorrent to klient BitTorrenta dla KDE.
 
 Główne cechy to:
 - ściąganie plików torrent
-- ograniczanie szybkości uploadu, baczące żeby większość ludzi nie
-  przesyłała nieograniczonej ilości danych
+- ograniczanie szybkości uploadu, baczące żeby większość ludzi
+  nie przesyłała nieograniczonej ilości danych
 - przeszukiwanie Internetu przy użyciu różnych wyszukiwarek, można
   nawet dodać własną
 - trackery UDP
@@ -143,22 +143,6 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/ktupnptest
 %ghost %{_libdir}/libktcore.so.16
 %attr(755,root,root) %{_libdir}/libktcore.so.*.*.*
-%dir %{_libdir}/qt5/plugins/ktorrent
-%attr(755,root,root) %{_libdir}/qt5/plugins/ktorrent/ktorrent_bwscheduler.so
-%attr(755,root,root) %{_libdir}/qt5/plugins/ktorrent/ktorrent_downloadorder.so
-%attr(755,root,root) %{_libdir}/qt5/plugins/ktorrent/ktorrent_infowidget.so
-%attr(755,root,root) %{_libdir}/qt5/plugins/ktorrent/ktorrent_ipfilter.so
-%attr(755,root,root) %{_libdir}/qt5/plugins/ktorrent/ktorrent_logviewer.so
-%attr(755,root,root) %{_libdir}/qt5/plugins/ktorrent/ktorrent_magnetgenerator.so
-%attr(755,root,root) %{_libdir}/qt5/plugins/ktorrent/ktorrent_mediaplayer.so
-%attr(755,root,root) %{_libdir}/qt5/plugins/ktorrent/ktorrent_scanfolder.so
-%attr(755,root,root) %{_libdir}/qt5/plugins/ktorrent/ktorrent_scanforlostfiles.so
-%attr(755,root,root) %{_libdir}/qt5/plugins/ktorrent/ktorrent_shutdown.so
-%attr(755,root,root) %{_libdir}/qt5/plugins/ktorrent/ktorrent_stats.so
-%attr(755,root,root) %{_libdir}/qt5/plugins/ktorrent/ktorrent_upnp.so
-%attr(755,root,root) %{_libdir}/qt5/plugins/ktorrent/ktorrent_zeroconf.so
-%attr(755,root,root) %{_libdir}/qt5/plugins/ktorrent/ktorrent_search.so
-%attr(755,root,root) %{_libdir}/qt5/plugins/ktorrent/ktorrent_syndication.so
 %{_iconsdir}/hicolor/16x16/actions/kt-add-feeds.png
 %{_iconsdir}/hicolor/16x16/actions/kt-add-filters.png
 %{_iconsdir}/hicolor/16x16/actions/kt-remove-feeds.png
@@ -234,3 +218,19 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/ktorrent
 %{_datadir}/kxmlgui5/ktorrent
 %{_datadir}/metainfo/org.kde.ktorrent.appdata.xml
+%dir %{_libdir}/qt5/plugins/ktorrent_plugins
+%attr(755,root,root) %{_libdir}/qt5/plugins/ktorrent_plugins/ktorrent_bwscheduler.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/ktorrent_plugins/ktorrent_downloadorder.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/ktorrent_plugins/ktorrent_infowidget.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/ktorrent_plugins/ktorrent_ipfilter.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/ktorrent_plugins/ktorrent_logviewer.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/ktorrent_plugins/ktorrent_magnetgenerator.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/ktorrent_plugins/ktorrent_mediaplayer.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/ktorrent_plugins/ktorrent_scanfolder.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/ktorrent_plugins/ktorrent_scanforlostfiles.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/ktorrent_plugins/ktorrent_search.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/ktorrent_plugins/ktorrent_shutdown.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/ktorrent_plugins/ktorrent_stats.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/ktorrent_plugins/ktorrent_syndication.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/ktorrent_plugins/ktorrent_upnp.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/ktorrent_plugins/ktorrent_zeroconf.so

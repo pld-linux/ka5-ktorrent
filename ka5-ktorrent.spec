@@ -1,10 +1,14 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
+%bcond_without	webengine	# build without webengine
 %define		kdeappsver	22.04.2
 %define		kframever	5.82.0
 %define		qtver		5.15.2
 %define		kaname		ktorrent
+%ifarch x32
+%undefine	with_webengine
+%endif
 Summary:	Native KDE BitTorrent client
 Summary(de.UTF-8):	Ein nativer KDE BitTorrent Klient
 Summary(pl.UTF-8):	Natywny klient BitTorrenta dla KDE
@@ -25,8 +29,8 @@ BuildRequires:	Qt5PrintSupport-devel >= %{qtver}
 BuildRequires:	Qt5Qml-devel >= %{qtver}
 BuildRequires:	Qt5Quick-devel >= %{qtver}
 BuildRequires:	Qt5Test-devel >= %{qtver}
-BuildRequires:	Qt5WebChannel-devel >= %{qtver}
-BuildRequires:	Qt5WebEngine-devel >= %{qtver}
+%{?with_webengine:BuildRequires:	Qt5WebChannel-devel >= %{qtver}}
+%{?with_webengine:BuildRequires:	Qt5WebEngine-devel >= %{qtver}}
 BuildRequires:	Qt5Widgets-devel
 BuildRequires:	boost-devel
 BuildRequires:	gettext-devel
@@ -69,7 +73,6 @@ BuildRequires:	taglib-devel
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
 BuildRequires:	zlib-devel
-ExclusiveArch:	i686  %{x8664}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -143,6 +146,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/ktupnptest
 %ghost %{_libdir}/libktcore.so.16
 %attr(755,root,root) %{_libdir}/libktcore.so.*.*.*
+%if %{with webengine}
 %{_iconsdir}/hicolor/16x16/actions/kt-add-feeds.png
 %{_iconsdir}/hicolor/16x16/actions/kt-add-filters.png
 %{_iconsdir}/hicolor/16x16/actions/kt-remove-feeds.png
@@ -155,6 +159,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_iconsdir}/hicolor/32x32/actions/kt-add-filters.png
 %{_iconsdir}/hicolor/32x32/actions/kt-remove-feeds.png
 %{_iconsdir}/hicolor/32x32/actions/kt-remove-filters.png
+%endif
 %{_desktopdir}/org.kde.ktorrent.desktop
 %{_iconsdir}/hicolor/128x128/apps/ktorrent.png
 %{_iconsdir}/hicolor/16x16/actions/kt-stop-all.png
@@ -215,7 +220,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_iconsdir}/hicolor/scalable/actions/kt-set-max-upload-speed.svgz
 %{_iconsdir}/hicolor/scalable/actions/kt-speed-limits.svgz
 %{_datadir}/knotifications5/ktorrent.notifyrc
-%{_datadir}/ktorrent
+%{?with_webengine:%{_datadir}/ktorrent}
 %{_datadir}/kxmlgui5/ktorrent
 %{_datadir}/metainfo/org.kde.ktorrent.appdata.xml
 %dir %{_libdir}/qt5/plugins/ktorrent_plugins
@@ -228,9 +233,12 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/qt5/plugins/ktorrent_plugins/ktorrent_mediaplayer.so
 %attr(755,root,root) %{_libdir}/qt5/plugins/ktorrent_plugins/ktorrent_scanfolder.so
 %attr(755,root,root) %{_libdir}/qt5/plugins/ktorrent_plugins/ktorrent_scanforlostfiles.so
-%attr(755,root,root) %{_libdir}/qt5/plugins/ktorrent_plugins/ktorrent_search.so
 %attr(755,root,root) %{_libdir}/qt5/plugins/ktorrent_plugins/ktorrent_shutdown.so
 %attr(755,root,root) %{_libdir}/qt5/plugins/ktorrent_plugins/ktorrent_stats.so
-%attr(755,root,root) %{_libdir}/qt5/plugins/ktorrent_plugins/ktorrent_syndication.so
 %attr(755,root,root) %{_libdir}/qt5/plugins/ktorrent_plugins/ktorrent_upnp.so
 %attr(755,root,root) %{_libdir}/qt5/plugins/ktorrent_plugins/ktorrent_zeroconf.so
+
+%if %{with webengine}
+%attr(755,root,root) %{_libdir}/qt5/plugins/ktorrent_plugins/ktorrent_search.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/ktorrent_plugins/ktorrent_syndication.so
+%endif

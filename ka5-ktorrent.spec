@@ -2,8 +2,8 @@
 # Conditional build:
 %bcond_with	tests		# build with tests
 %bcond_without	webengine	# build without webengine
-%define		kdeappsver	22.04.2
-%define		kframever	5.82.0
+%define		kdeappsver	22.04.3
+%define		kframever	5.94.0
 %define		qtver		5.15.2
 %define		kaname		ktorrent
 %ifarch x32
@@ -13,12 +13,12 @@ Summary:	Native KDE BitTorrent client
 Summary(de.UTF-8):	Ein nativer KDE BitTorrent Klient
 Summary(pl.UTF-8):	Natywny klient BitTorrenta dla KDE
 Name:		ka5-%{kaname}
-Version:	22.04.2
+Version:	22.04.3
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	b497ac22f7806b8c95ddf7fc50aa39cf
+# Source0-md5:	bdcecd2c5bf020788a64c41ca5ad4e4b
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	Qt5DBus-devel >= %{qtver}

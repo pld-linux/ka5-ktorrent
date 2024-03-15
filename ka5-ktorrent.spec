@@ -2,7 +2,7 @@
 # Conditional build:
 %bcond_with	tests		# build with tests
 %bcond_without	webengine	# build without webengine
-%define		kdeappsver	24.01.95
+%define		kdeappsver	23.08.4
 %define		kframever	5.94.0
 %define		qtver		5.15.2
 %define		kaname		ktorrent
@@ -13,60 +13,61 @@ Summary:	Native KDE BitTorrent client
 Summary(de.UTF-8):	Ein nativer KDE BitTorrent Klient
 Summary(pl.UTF-8):	Natywny klient BitTorrenta dla KDE
 Name:		ka5-%{kaname}
-Version:	24.01.95
-Release:	0.1
+Version:	23.08.4
+Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
-Source0:	https://download.kde.org/unstable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	d28b8798381cd83c2b316cbc811d862c
+Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
+# Source0-md5:	c6f68f99e412bf2a77642e28e3a64c6b
 URL:		http://www.kde.org/
-BuildRequires:	Qt6Core-devel >= %{qtver}
-BuildRequires:	Qt6DBus-devel >= %{qtver}
-BuildRequires:	Qt6Gui-devel >= %{qtver}
-BuildRequires:	Qt6Network >= %{qtver}
-BuildRequires:	Qt6Positioning-devel >= %{qtver}
-BuildRequires:	Qt6PrintSupport-devel >= %{qtver}
-BuildRequires:	Qt6Qml-devel >= %{qtver}
-BuildRequires:	Qt6Quick-devel >= %{qtver}
-BuildRequires:	Qt6Test-devel >= %{qtver}
-%{?with_webengine:BuildRequires:	Qt6WebChannel-devel >= %{qtver}}
-%{?with_webengine:BuildRequires:	Qt6WebEngine-devel >= %{qtver}}
-BuildRequires:	Qt6Widgets-devel
+BuildRequires:	Qt5Core-devel >= %{qtver}
+BuildRequires:	Qt5DBus-devel >= %{qtver}
+BuildRequires:	Qt5Gui-devel >= %{qtver}
+BuildRequires:	Qt5Network >= %{qtver}
+BuildRequires:	Qt5Positioning-devel >= %{qtver}
+BuildRequires:	Qt5PrintSupport-devel >= %{qtver}
+BuildRequires:	Qt5Qml-devel >= %{qtver}
+BuildRequires:	Qt5Quick-devel >= %{qtver}
+BuildRequires:	Qt5Test-devel >= %{qtver}
+%{?with_webengine:BuildRequires:	Qt5WebChannel-devel >= %{qtver}}
+%{?with_webengine:BuildRequires:	Qt5WebEngine-devel >= %{qtver}}
+BuildRequires:	Qt5Widgets-devel
 BuildRequires:	boost-devel
 BuildRequires:	gettext-devel
 BuildRequires:	ka5-libktorrent-devel >= 21.04.1
-BuildRequires:	kf6-extra-cmake-modules >= %{kframever}
-BuildRequires:	kf6-karchive-devel >= %{kframever}
-BuildRequires:	kf6-kauth-devel >= %{kframever}
-BuildRequires:	kf6-kcmutils-devel >= %{kframever}
-BuildRequires:	kf6-kcodecs-devel >= %{kframever}
-BuildRequires:	kf6-kcompletion-devel >= %{kframever}
-BuildRequires:	kf6-kconfig-devel >= %{kframever}
-BuildRequires:	kf6-kconfigwidgets-devel >= %{kframever}
-BuildRequires:	kf6-kcoreaddons-devel >= %{kframever}
-BuildRequires:	kf6-kcrash-devel >= %{kframever}
-BuildRequires:	kf6-kdbusaddons-devel >= %{kframever}
-BuildRequires:	kf6-kdnssd-devel >= %{kframever}
-BuildRequires:	kf6-kdoctools-devel >= %{kframever}
-BuildRequires:	kf6-ki18n-devel >= %{kframever}
-BuildRequires:	kf6-kiconthemes-devel >= %{kframever}
-BuildRequires:	kf6-kio-devel >= %{kframever}
-BuildRequires:	kf6-kitemviews-devel >= %{kframever}
-BuildRequires:	kf6-kjobwidgets-devel >= %{kframever}
-BuildRequires:	kf6-knotifications-devel >= %{kframever}
-BuildRequires:	kf6-knotifyconfig-devel >= %{kframever}
-BuildRequires:	kf6-kparts-devel >= %{kframever}
-BuildRequires:	kf6-kplotting-devel >= %{kframever}
-BuildRequires:	kf6-kservice-devel >= %{kframever}
-BuildRequires:	kf6-ktextwidgets-devel >= %{kframever}
-BuildRequires:	kf6-kwidgetsaddons-devel >= %{kframever}
-BuildRequires:	kf6-kwindowsystem-devel >= %{kframever}
-BuildRequires:	kf6-kxmlgui-devel >= %{kframever}
-BuildRequires:	kf6-solid-devel >= %{kframever}
-BuildRequires:	kf6-sonnet-devel >= %{kframever}
-BuildRequires:	kf6-syndication-devel >= %{kframever}
+BuildRequires:	kf5-extra-cmake-modules >= %{kframever}
+BuildRequires:	kf5-karchive-devel >= %{kframever}
+BuildRequires:	kf5-kauth-devel >= %{kframever}
+BuildRequires:	kf5-kcmutils-devel >= %{kframever}
+BuildRequires:	kf5-kcodecs-devel >= %{kframever}
+BuildRequires:	kf5-kcompletion-devel >= %{kframever}
+BuildRequires:	kf5-kconfig-devel >= %{kframever}
+BuildRequires:	kf5-kconfigwidgets-devel >= %{kframever}
+BuildRequires:	kf5-kcoreaddons-devel >= %{kframever}
+BuildRequires:	kf5-kcrash-devel >= %{kframever}
+BuildRequires:	kf5-kdbusaddons-devel >= %{kframever}
+BuildRequires:	kf5-kdnssd-devel >= %{kframever}
+BuildRequires:	kf5-kdoctools-devel >= %{kframever}
+BuildRequires:	kf5-ki18n-devel >= %{kframever}
+BuildRequires:	kf5-kiconthemes-devel >= %{kframever}
+BuildRequires:	kf5-kio-devel >= %{kframever}
+BuildRequires:	kf5-kitemviews-devel >= %{kframever}
+BuildRequires:	kf5-kjobwidgets-devel >= %{kframever}
+BuildRequires:	kf5-knotifications-devel >= %{kframever}
+BuildRequires:	kf5-knotifyconfig-devel >= %{kframever}
+BuildRequires:	kf5-kparts-devel >= %{kframever}
+BuildRequires:	kf5-kplotting-devel >= %{kframever}
+BuildRequires:	kf5-kross-devel >= %{kframever}
+BuildRequires:	kf5-kservice-devel >= %{kframever}
+BuildRequires:	kf5-ktextwidgets-devel >= %{kframever}
+BuildRequires:	kf5-kwidgetsaddons-devel >= %{kframever}
+BuildRequires:	kf5-kwindowsystem-devel >= %{kframever}
+BuildRequires:	kf5-kxmlgui-devel >= %{kframever}
+BuildRequires:	kf5-solid-devel >= %{kframever}
+BuildRequires:	kf5-sonnet-devel >= %{kframever}
+BuildRequires:	kf5-syndication-devel >= %{kframever}
 BuildRequires:	kp5-plasma-workspace-devel
-BuildRequires:	phonon-qt6-devel
+BuildRequires:	phonon-qt5-devel
 BuildRequires:	pkgconfig
 BuildRequires:	taglib-devel
 BuildRequires:	tar >= 1:1.22
@@ -101,8 +102,8 @@ KTorrent to klient BitTorrenta dla KDE.
 
 Główne cechy to:
 - ściąganie plików torrent
-- ograniczanie szybkości uploadu, baczące żeby większość ludzi nie
-  przesyłała nieograniczonej ilości danych
+- ograniczanie szybkości uploadu, baczące żeby większość ludzi
+  nie przesyłała nieograniczonej ilości danych
 - przeszukiwanie Internetu przy użyciu różnych wyszukiwarek, można
   nawet dodać własną
 - trackery UDP
@@ -216,25 +217,26 @@ rm -rf $RPM_BUILD_ROOT
 %{_iconsdir}/hicolor/scalable/actions/kt-set-max-download-speed.svgz
 %{_iconsdir}/hicolor/scalable/actions/kt-set-max-upload-speed.svgz
 %{_iconsdir}/hicolor/scalable/actions/kt-speed-limits.svgz
-%{_datadir}/knotifications6/ktorrent.notifyrc
+%{_datadir}/knotifications5/ktorrent.notifyrc
 %{?with_webengine:%{_datadir}/ktorrent}
 %{_datadir}/kxmlgui5/ktorrent
 %{_datadir}/metainfo/org.kde.ktorrent.appdata.xml
-%dir %{_libdir}/qt6/plugins/ktorrent_plugins
-%attr(755,root,root) %{_libdir}/qt6/plugins/ktorrent_plugins/BandwidthSchedulerPlugin.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/ktorrent_plugins/DownloadOrderPlugin.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/ktorrent_plugins/IPFilterPlugin.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/ktorrent_plugins/InfoWidgetPlugin.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/ktorrent_plugins/LogViewerPlugin.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/ktorrent_plugins/MagnetGeneratorPlugin.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/ktorrent_plugins/MediaPlayerPlugin.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/ktorrent_plugins/ScanFolderPlugin.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/ktorrent_plugins/ScanForLostFilesPlugin.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/ktorrent_plugins/ShutdownPlugin.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/ktorrent_plugins/StatsPlugin.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/ktorrent_plugins/UPnPPlugin.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/ktorrent_plugins/ZeroconfPlugin.so
+%dir %{_libdir}/qt5/plugins/ktorrent_plugins
+%attr(755,root,root) %{_libdir}/qt5/plugins/ktorrent_plugins/ktorrent_bwscheduler.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/ktorrent_plugins/ktorrent_downloadorder.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/ktorrent_plugins/ktorrent_infowidget.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/ktorrent_plugins/ktorrent_ipfilter.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/ktorrent_plugins/ktorrent_logviewer.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/ktorrent_plugins/ktorrent_magnetgenerator.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/ktorrent_plugins/ktorrent_mediaplayer.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/ktorrent_plugins/ktorrent_scanfolder.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/ktorrent_plugins/ktorrent_scanforlostfiles.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/ktorrent_plugins/ktorrent_shutdown.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/ktorrent_plugins/ktorrent_stats.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/ktorrent_plugins/ktorrent_upnp.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/ktorrent_plugins/ktorrent_zeroconf.so
+
 %if %{with webengine}
-%attr(755,root,root) %{_libdir}/qt6/plugins/ktorrent_plugins/SearchPlugin.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/ktorrent_plugins/SyndicationPlugin.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/ktorrent_plugins/ktorrent_search.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/ktorrent_plugins/ktorrent_syndication.so
 %endif
